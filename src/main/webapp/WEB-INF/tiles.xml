@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="app.default" template="/WEB-INF/servlets/default.jsp">
+        <put-attribute name="title" value="Головна сторінка"/>
+    </definition>
+    <definition name="app.homepage" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/home.jsp"/>
+    </definition>
+    <definition name="app.employees" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/employees.jsp"/>
+    </definition>
+    <definition name="app.message" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/message.jsp"/>
+    </definition>
+    <definition name="app.add-update-employee" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/add-update-employee.jsp"/>
+    </definition>
+    <definition name="app.find" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/find.jsp"/>
+    </definition>
+    <definition name="app.dishes" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/dishes.jsp"/>
+    </definition>
+    <definition name="app.add-update-dish" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/add-update-dish.jsp"/>
+    </definition>
+    <definition name="app.menus" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/menus.jsp"/>
+    </definition>
+    <definition name="app.add-update-menu" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/add-update-menu.jsp"/>
+    </definition>
+    <definition name="app.menu-details" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/menu-details.jsp"/>
+    </definition>
+    <definition name="app.orders" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/orders.jsp"/>
+    </definition>
+    <definition name="app.add-update-order" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/add-update-order.jsp"/>
+    </definition>
+    <definition name="app.order-details" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/order-details.jsp"/>
+    </definition>
+    <definition name="app.prepared-dish" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/prepared-dishes.jsp"/>
+    </definition>
+    <definition name="app.ingredients" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/ingredients.jsp"/>
+    </definition>
+    <definition name="app.add-update-ingredient" extends="app.default">
+        <put-attribute name="content" value="/WEB-INF/servlets/add-update-ingredient.jsp"/>
+    </definition>
+
+</tiles-definitions>

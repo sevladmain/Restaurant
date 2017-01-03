@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver.class}"/>
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="user" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}"/>
+        <property name="minPoolSize" value="${jdbc.min.connection}"/>
+        <property name="maxPoolSize" value="${jdbc.max.connections}"/>
+        <property name="acquireIncrement" value="${jdbc.acquire.increment}"/>
+    </bean>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.goit.homeworks.restaurant.model"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl" id="namingStrategy"/>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties"/>
+    </bean>
+
+    <bean class="com.goit.homeworks.restaurant.dao.hibernate.HEmployeeDao" id="employeeDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean class="com.goit.homeworks.restaurant.dao.hibernate.HPositionDao" id="positionDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="categoryDao" class="com.goit.homeworks.restaurant.dao.hibernate.HCategoryDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="dishDao" class="com.goit.homeworks.restaurant.dao.hibernate.HDishDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean class="com.goit.homeworks.restaurant.services.EmployeeService" id="employeeService">
+        <property name="positionDao" ref="positionDao"/>
+        <property name="employeeDao" ref="employeeDao"/>
+    </bean>
+    <bean id="dishService" class="com.goit.homeworks.restaurant.services.DishService">
+        <property name="dishDao" ref="dishDao"/>
+        <property name="categoryDao" ref="categoryDao" />
+    </bean>
+    <bean id="menuDao" class="com.goit.homeworks.restaurant.dao.hibernate.HMenuDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="menuService" class="com.goit.homeworks.restaurant.services.MenuService">
+        <property name="menuDao" ref="menuDao"/>
+        <property name="dishDao" ref="dishDao" />
+    </bean>
+    <bean id="orderDao" class="com.goit.homeworks.restaurant.dao.hibernate.HOrderDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="preparedDishDao" class="com.goit.homeworks.restaurant.dao.hibernate.HPreparedDishDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean id="ingredientDao" class="com.goit.homeworks.restaurant.dao.hibernate.HIngredientDao">
+        <constructor-arg type="org.hibernate.SessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="orderService" class="com.goit.homeworks.restaurant.services.OrderService">
+        <property name="orderDao" ref="orderDao"/>
+        <property name="dishDao" ref="dishDao" />
+        <property name="employeeDao" ref="employeeDao"/>
+        <property name="preparedDishDao" ref="preparedDishDao"/>
+        <property name="ingredientDao" ref="ingredientDao"/>
+    </bean>
+    <bean id="ingredientService" class="com.goit.homeworks.restaurant.services.IngredientService">
+        <property name="ingredientDao" ref="ingredientDao"/>
+    </bean>
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+</beans>

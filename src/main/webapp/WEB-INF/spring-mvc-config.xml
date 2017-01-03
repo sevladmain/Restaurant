@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.goit.homeworks.restaurant.web"/>
+
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+    </bean>
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean id="idToPosition" class="com.goit.homeworks.restaurant.services.IdToPositionConverter"/>
+                <bean id="idToDish" class="com.goit.homeworks.restaurant.services.IdToCategoryConverter"/>
+                <bean id="idToEmployee" class="com.goit.homeworks.restaurant.services.IdToEmployeeConverter"/>
+                <bean id="idToDish" class="com.goit.homeworks.restaurant.services.IdToDishConverter"/>
+                <bean id="idToIngredient" class = "com.goit.homeworks.restaurant.services.IdToIngredientConverter"/>
+                <bean id="idToOrder" class="com.goit.homeworks.restaurant.services.IdToOrderConverter"/>
+            </set>
+        </property>
+    </bean>
+    <bean id="objectMapper" class="com.goit.homeworks.restaurant.dao.hibernate.HibernateAwareObjectMapper"/>
+    <bean id="messageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="objectMapper" ref="objectMapper"/>
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="messageConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:annotation-driven conversion-service="conversionService"/>
+</beans>
