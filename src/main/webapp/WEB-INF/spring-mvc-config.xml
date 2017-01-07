@@ -33,17 +33,17 @@
             </set>
         </property>
     </bean>
-    <bean id="objectMapper" class="com.goit.homeworks.restaurant.dao.hibernate.HibernateAwareObjectMapper"/>
-    <bean id="messageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-        <property name="objectMapper" ref="objectMapper"/>
-    </bean>
-    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="messageConverter"/>
-            </list>
-        </property>
-    </bean>
+    <!--<bean id="objectMapper" class="com.goit.homeworks.restaurant.dao.hibernate.HibernateAwareObjectMapper"/>-->
+    <!--<bean id="messageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
+        <!--<property name="objectMapper" ref="objectMapper"/>-->
+    <!--</bean>-->
+    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">-->
+        <!--<property name="messageConverters">-->
+            <!--<list>-->
+                <!--<ref bean="messageConverter"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <mvc:annotation-driven conversion-service="conversionService"/>

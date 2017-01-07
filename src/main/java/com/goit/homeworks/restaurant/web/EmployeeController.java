@@ -87,6 +87,12 @@ public class EmployeeController {
         return "app.add-update-employee";
     }
 
+/*    @RequestMapping(value = "employee/added", method = RequestMethod.POST)
+    public String saveOrUpdateEmployee(Map<String, Object> model, final RedirectAttributes redirectAttributes) {
+        model.forEach((x, y) -> System.out.println(x + "," + y));
+        return "app.homepage";
+    }*/
+
     @RequestMapping(value = "employee/added", method = RequestMethod.POST)
     public String saveOrUpdateEmployee(@ModelAttribute("employeeForm") Employee employee, final RedirectAttributes redirectAttributes) {
         LOGGER.debug("saveOrUpdateEmployee() is executed!");

@@ -65,7 +65,6 @@ CREATE TABLE employee (
     dtype character varying(30)
 );
 
-
 --
 -- TOC entry 2040 (class 0 OID 0)
 -- Dependencies: 169
@@ -219,22 +218,22 @@ CREATE TABLE prepared_dishes (
     id_order integer
 );
 
-INSERT INTO category (id, name) VALUES (1, 'Перші страви');
-INSERT INTO category (id, name) VALUES (2, 'Другі страви');
-INSERT INTO category (id, name) VALUES (3, 'Десерти');
-INSERT INTO category (id, name) VALUES (4, 'Алкоголь');
+INSERT INTO category (id, name) VALUES (1, 'Pershi stravy');
+INSERT INTO category (id, name) VALUES (2, 'Druhi stravy');
+INSERT INTO category (id, name) VALUES (3, 'Deserty');
+INSERT INTO category (id, name) VALUES (4, 'Alkohol"');
 
 
 
-INSERT INTO dishes (id, id_category, price, weight, name) VALUES (4, 1, 25, 150, 'Зелений борщ');
-INSERT INTO dishes (id, id_category, price, weight, name) VALUES (3, 1, 50, 250, 'Борщ');
-INSERT INTO dishes (id, id_category, price, weight, name) VALUES (1, 2, 1000, 10, 'Курочка под марінадом');
+INSERT INTO dishes (id, id_category, price, weight, name) VALUES (4, 1, 25, 150, 'Zelenyj borshh');
+INSERT INTO dishes (id, id_category, price, weight, name) VALUES (3, 1, 50, 250, 'Borshh');
+INSERT INTO dishes (id, id_category, price, weight, name) VALUES (1, 2, 1000, 10, 'Kurochka pod marinadom');
 
 
-INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (30, 'Надійка', 'Надійка', '1989-05-02', 3, 100000, 'Employee');
-INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (15, 'Сергій', 'Іванов', '1995-02-06', 1, 5000000, 'Employee');
-INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (16, 'Олена', 'Сідорова', '2016-12-05', 1, 10000, 'Waiter');
-INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (18, 'Іван', 'Петрович', '1986-02-03', 3, 5000, 'Waiter');
+INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (30, 'Nadijka', 'Nadijka', '1989-05-02', 3, 100000, 'Employee');
+INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (15, 'Serhij', 'Ivanov', '1995-02-06', 1, 5000000, 'Employee');
+INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (16, 'Olena', 'Sidorova', '2016-12-05', 1, 10000, 'Waiter');
+INSERT INTO employee (id, first_name, last_name, date_birth, id_position, salary, dtype) VALUES (18, 'Ivan', 'Petrovych', '1986-02-03', 3, 5000, 'Waiter');
 
 INSERT INTO ingredientlist (id_ingredient, id_dish, used_amount) VALUES (1, 1, 5);
 INSERT INTO ingredientlist (id_ingredient, id_dish, used_amount) VALUES (2, 1, 3);
@@ -246,17 +245,17 @@ INSERT INTO ingredientlist (id_ingredient, id_dish, used_amount) VALUES (2, 1, 3
 -- Data for Name: ingredients; Type: TABLE DATA; Schema: xgbua_goit; Owner: -
 --
 
-INSERT INTO ingredients (id, name, amount) VALUES (6, 'М''ясо курки', 500600);
-INSERT INTO ingredients (id, name, amount) VALUES (7, 'Курчата', 10);
-INSERT INTO ingredients (id, name, amount) VALUES (8, 'Телятина', 1000);
-INSERT INTO ingredients (id, name, amount) VALUES (1, 'Картопля', 188);
-INSERT INTO ingredients (id, name, amount) VALUES (2, 'Помідори', 344);
+INSERT INTO ingredients (id, name, amount) VALUES (6, 'M''yaso kurky', 500600);
+INSERT INTO ingredients (id, name, amount) VALUES (7, 'Kurchata', 10);
+INSERT INTO ingredients (id, name, amount) VALUES (8, 'Telyatyna', 1000);
+INSERT INTO ingredients (id, name, amount) VALUES (1, 'Kartoplya', 188);
+INSERT INTO ingredients (id, name, amount) VALUES (2, 'Pomidory', 344);
 
 
-INSERT INTO menu (id, name) VALUES (3, 'Бізнес-ланч');
-INSERT INTO menu (id, name) VALUES (4, 'Другі страви');
-INSERT INTO menu (id, name) VALUES (5, 'Нове меню');
-INSERT INTO menu (id, name) VALUES (2, 'Перші страви');
+INSERT INTO menu (id, name) VALUES (3, 'Biznes-lanch');
+INSERT INTO menu (id, name) VALUES (4, 'Druhi stravy');
+INSERT INTO menu (id, name) VALUES (5, 'Nove menyu');
+INSERT INTO menu (id, name) VALUES (2, 'Pershi stravy');
 
 
 INSERT INTO menulist (id_menu, id_dish) VALUES (0, 0);
