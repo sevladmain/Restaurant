@@ -6,6 +6,7 @@
     <version>1.0</version>
     <modules>
         <module>RestaurantAdmin</module>
+        <module>RestaurantWeb</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
