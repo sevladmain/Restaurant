@@ -32,42 +32,42 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Працівники<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/employee/add">Додати</a></li>
-                        <li><a href="/employee/find">Пошук за іменем</a></li>
-                        <li><a href="/employee/all">Вивести всіх</a></li>
+                        <li><a href="/admin/employee/add">Додати</a></li>
+                        <li><a href="/admin/employee/find">Пошук за іменем</a></li>
+                        <li><a href="/admin/employee/all">Вивести всіх</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Страва<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/dish/add">Додати</a></li>
-                        <li><a href="/dish/find">Пошук за назвою</a></li>
-                        <li><a href="/dish/all">Вивести всіх</a></li>
+                        <li><a href="/admin/dish/add">Додати</a></li>
+                        <li><a href="/admin/dish/find">Пошук за назвою</a></li>
+                        <li><a href="/admin/dish/all">Вивести всіх</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Меню<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/menu/add">Додати</a></li>
-                        <li><a href="/menu/find">Пошук за назвою</a></li>
-                        <li><a href="/menu/all">Вивести всіх</a></li>
+                        <li><a href="/admin/menu/add">Додати</a></li>
+                        <li><a href="/admin/menu/find">Пошук за назвою</a></li>
+                        <li><a href="/admin/menu/all">Вивести всіх</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Замовлення<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/order/add">Створити</a></li>
-                        <li><a href="/order/allOpen">Вивести відкриті замовлення</a></li>
-                        <li><a href="/order/allClosed">Вивести закриті замовлення</a></li>
+                        <li><a href="/admin/order/add">Створити</a></li>
+                        <li><a href="/admin/order/allOpen">Вивести відкриті замовлення</a></li>
+                        <li><a href="/admin/order/allClosed">Вивести закриті замовлення</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Складові<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/ingredient/add">Додати</a></li>
-                        <li><a href="/ingredient/find">Пошук</a></li>
-                        <li><a href="/ingredient/all">Вивести всі складові</a></li>
-                        <li><a href="/ingredient/min">Вивести складові, що закінчуються</a></li>
+                        <li><a href="/admin/ingredient/add">Додати</a></li>
+                        <li><a href="/admin/ingredient/find">Пошук</a></li>
+                        <li><a href="/admin/ingredient/all">Вивести всі складові</a></li>
+                        <li><a href="/admin/ingredient/min">Вивести складові, що закінчуються</a></li>
                     </ul>
                 </li>
             </ul>
