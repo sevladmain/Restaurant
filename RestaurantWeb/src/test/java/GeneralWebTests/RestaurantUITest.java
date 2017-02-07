@@ -1,9 +1,7 @@
 package GeneralWebTests;
 
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
@@ -16,7 +14,8 @@ import static com.codeborne.selenide.Selenide.open;
 /**
  * Created by SeVlad on 15.01.2017.
  */
-public class RestaurantMainPageTest {
+@Ignore
+public class RestaurantUITest {
 
     @BeforeClass
     public static void setup() {
@@ -25,9 +24,21 @@ public class RestaurantMainPageTest {
     }
 
     @Test
+    public void mainPageHasRestaurantName() {
+        open("/");
+        $(By.id("restaurant_name")).shouldBe(exist);
+    }
+
+    @Test
     public void mainPageHasAddress() {
         open("/");
-        $(By.id("address")).shouldHave(text("Ресторан у загубленого альпініста"));
+        $(By.id("address")).shouldBe(exist);
+    }
+
+    @Test
+    public void mainPageHasPhone() {
+        open("/");
+        $(By.id("phone")).shouldBe(exist);
     }
 
     @AfterClass
